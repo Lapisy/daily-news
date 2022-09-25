@@ -1,5 +1,6 @@
 var mysql      = require('mysql');
 const config = require("../config/config.default")
+const Logger = require("../util/logger")
 var connection = mysql.createConnection({
   host     : config.DB_HOST,
   user     : config.DB_USER,
@@ -9,11 +10,11 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) {
-    console.error('database error connecting: ' + err.stack);
+    Logger.error('database error connecting: ' + err.stack);
     return;
   }
 
-  console.log('database connected as id ' + connection.threadId);
+  Logger.info('database connected as id ' + connection.threadId);
 });
 
 module.exports = connection

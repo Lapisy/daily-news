@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const {PORT} = require("./config/config.default")
-const morgan = require("morgan")
+const morganMiddleware = require("./middleware/morgan")
 const router = require("./router/index")
 const errorHandler = require('./middleware/error-handler')
 const db = require('./db/mysql')
@@ -10,7 +10,7 @@ const db = require('./db/mysql')
  * 导入中间件
  */
 // 日志中间库
-app.use(morgan("dev"))
+app.use(morganMiddleware)
 app.use(express.json())
 app.use(express.urlencoded())
 
