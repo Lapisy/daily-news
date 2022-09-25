@@ -4,6 +4,7 @@ const {PORT} = require("./config/config.default")
 const morgan = require("morgan")
 const router = require("./router/index")
 const errorHandler = require('./middleware/error-handler')
+const db = require('./db/mysql')
 
 /**
  * 导入中间件
