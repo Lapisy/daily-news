@@ -3,12 +3,11 @@
  */
 const express = require('express')
 const router = express.Router()
+const userController = require("../controller/user-controller")
 
 
 // 登录接口
-router.post("/login",(req,res)=>{
-    res.send("/user/login==")
-})
+router.get("/login",userController.login)
 
 // 注册接口
 router.post("/regist",(req,res)=>{
