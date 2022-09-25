@@ -6,10 +6,17 @@
  */
  const express = require('express')
  const router = express.Router()
+ const postController = require('../controller/post-controller')
  
  
- // 登录接口
+ // publish a post
+router.post('/publish',postController.publish())
 
+// get all posts
+router.post('/all',postController.all())
+
+// get exactly post
+router.post('/query',postController.query())
  
  
  module.exports = router
