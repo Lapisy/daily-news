@@ -8,3 +8,13 @@ exports.login = async (req, res, next) => {
         next(e)
     }
 }
+
+
+exports.register = async (req, res, next) => {
+    try {
+    
+        res.send("/register====")
+    }catch (e) {
+        next(e)
+    }
+}

@@ -7,12 +7,10 @@ const userController = require("../controller/user-controller")
 
 
 // 登录接口
-router.get("/login",userController.login)
+router.post("/login",userController.login)
 
 // 注册接口
-router.post("/regist",(req,res)=>{
-    res.send("/user/regist==")
-})
+router.post("/register",userController.register)
 
 // 更新接口
 router.post("/update",(req,res)=>{
