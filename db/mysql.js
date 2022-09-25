@@ -3,7 +3,8 @@ const config = require("../config/config.default")
 var connection = mysql.createConnection({
   host     : config.DB_HOST,
   user     : config.DB_USER,
-  password : config.DB_PASSWORD
+  password : config.DB_PASSWORD,
+  database : config.DB_DATABASE
 });
 
 connection.connect(function(err) {
